@@ -1,0 +1,85 @@
+
+imprimir_actual = falso;
+n=1
+
+progPrincipal:
+{
+	do
+	{
+		obtener_siguiente_linea()
+		terminoArch <- salida de obt_Siguiente
+
+		if(imprimir_actual == verdadero)	//imprimir actual=1
+		{
+			imprimir(actual)
+			imprimir_actual = falso		//imprimir actual=0
+		}
+Busc:
+		buscar patron
+
+		if( encontréPatron) 
+		{
+			imprimir salto
+			if( imprimir_anterior) 		// cmp imprimirAnterior,1
+				imprimir(anterior)	//imprimir
+	
+impAct:			imprimir(n)
+			imprimir(actual)
+			if( imprimir_siguiente)
+				imprimir_actual = verdadero
+		}
+term:		n++;
+		aux = anterior;
+		anterior = actual;
+		actual = aux;
+		anterior_cont = actual_cont;
+		actual_cont = 0;
+	}while(terminoArch==0)
+Cerrar archivos
+Salir con  Error 0
+}
+
+
+
+recargo buffer()
+{
+	leo del archivo en el buffer
+	fin <-buffer+EAX
+	pos <- buffer
+}
+
+
+buscar_patron: tomar dos buffer como parametros y verificar si un patron esta adentro del otro
+
+
+obtener siguiente linea:
+{
+	//Se lo llama con la posicion actual reseteada
+	//Actualiza la linea Actual y su largo
+	//Si la linea actual es la ultima guarda un 1 en [termino_arch]
+
+	while([pos] != \n)
+while:	{
+		if(pos=fin)
+			if(fin=finbuffer)		//tengo mas para recorrer
+				recargarBuffer()
+terminoLeer:		else
+				[termino_Arch]=1
+				jmp fuera_W
+analizarChar:	else
+			[posActual] <- [pos]		//copio de un bufer al otro
+			pos++				//avanzo sobre el bufferGeneral
+			posActual++			//avanzo sobre el buferActual
+	}
+fuera_W:
+	[posActual] <-10,0		//agrego caracteres finales
+	pos++				//salteo el \n
+	largo_actual=posActual-actual	//seteo largo actual
+}
+
+
+
+
+
+Espacio=32
+punto = 46
